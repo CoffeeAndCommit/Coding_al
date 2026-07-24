@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Academy | Media & Virtual Campus Tour</title>
+    <!-- Importing a premium typography font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #eab308;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.15);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #bfdbfe;
+        }
+
+        /* Grid System */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card components */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--bg-main);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Image Gallery Styling */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-main);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item svg {
+            width: 100%;
+            height: 140px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-item figcaption {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Video element customization */
+        video {
+            width: 100%;
+            max-height: 320px;
+            border-radius: 12px;
+            background-color: #000000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            outline: none;
+        }
+
+        /* Audio player customization */
+        .audio-wrapper {
+            background-color: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+        }
+
+        /* Iframe maps */
+        iframe {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            height: 300px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🖼️ Horizon Media Hub</h1>
+            <p>Experience Horizon Academy through high-quality photos, video tours, and sounds</p>
+        </header>
+
+        <!-- Media Content Grid -->
+        <div class="media-grid">
+
+            <!-- Video Section -->
+            <div class="card">
+                <h2>🎥 Virtual Campus Tour</h2>
+                <p>Take a 60-second virtual flight through our state-of-the-art facilities, libraries, and lush campuses.</p>
+                <!-- Using a stable public HTML5 video sample -->
+                <video controls poster="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Audio Section -->
+            <div class="card">
+                <h2>🎵 School Anthem</h2>
+                <p>Listen to the Horizon Academy choral group perform our school anthem: <em>"Onwards, Upwards, Together."</em></p>
+                
+                <div class="audio-wrapper">
+                    <!-- Standard school-like musical public sample -->
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p style="margin: 0; font-size: 0.8rem; font-style: italic;">Performed by the Horizon Symphonic Chorus &copy; 2026</p>
+                </div>
+            </div>
+
+            <!-- Map Iframe Section -->
+            <div class="card full-width">
+                <h2>📍 School Location</h2>
+                <p>We are centrally located in the heart of Science City. Use the interactive map below to find directions.</p>
+                <!-- OpenStreetMap standard iframe embed -->
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0150%2C40.7100%2C-73.9950%2C40.7200&amp;layer=mapnik"></iframe>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <div class="card full-width">
+                <h2>📸 Campus Gallery</h2>
+                <p>Take a glance at our beautiful landmarks, spaces, and labs.</p>
+                
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1: Main Building SVG -->
+                    <figure class="gallery-item">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#1e3b8a;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad1)" />
+                            <!-- Draw building shape -->
+                            <path d="M20,80 L20,40 L50,20 L80,40 L80,80 Z" fill="#ffffff" opacity="0.9" />
+                            <polygon points="50,20 15,45 85,45" fill="#ca8a04" />
+                            <rect x="30" y="55" width="10" height="25" fill="#1e3a8a" />
+                            <rect x="60" y="55" width="10" height="25" fill="#1e3a8a" />
+                            <rect x="45" y="30" width="10" height="10" rx="2" fill="#ca8a04" />
+                        </svg>
+                        <figcaption>Main Building</figcaption>
+                    </figure>
+
+                    <!-- Gallery Item 2: Science Lab SVG -->
+                    <figure class="gallery-item">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#065f46;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad2)" />
+                            <!-- Beaker -->
+                            <path d="M40,30 L40,45 L30,75 C28,80 32,85 38,85 L62,85 C68,85 72,80 70,75 L60,45 L60,30 Z" fill="#ffffff" opacity="0.9" />
+                            <rect x="38" y="27" width="24" height="5" rx="1" fill="#ca8a04" />
+                            <!-- Liquid level -->
+                            <path d="M33,67 C35,66 38,68 41,67 C44,66 47,68 50,67 C53,66 56,68 59,67 C62,66 65,68 67,67 L62,80 L38,80 Z" fill="#3b82f6" opacity="0.8" />
+                            <!-- Bubbles -->
+                            <circle cx="45" cy="55" r="3" fill="#ffffff" />
+                            <circle cx="53" cy="50" r="2.5" fill="#ffffff" />
+                            <circle cx="48" cy="40" r="1.5" fill="#ffffff" />
+                        </svg>
+                        <figcaption>Science Laboratory</figcaption>
+                    </figure>
+
+                    <!-- Gallery Item 3: Sports Field SVG -->
+                    <figure class="gallery-item">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#b45309;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#grad3)" />
+                            <!-- Trophy -->
+                            <path d="M35,25 H65 V45 C65,55 58,62 50,62 C42,62 35,55 35,45 Z" fill="#ffffff" />
+                            <path d="M47,62 H53 V78 H47 Z" fill="#ffffff" />
+                            <path d="M38,78 H62 V83 H38 Z" fill="#ffffff" />
+                            <!-- Handles -->
+                            <path d="M35,30 C30,30 30,40 35,40" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+                            <path d="M65,30 C70,30 70,40 65,40" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+                            <!-- Star inside -->
+                            <polygon points="50,33 53,39 60,40 55,45 56,51 50,48 44,51 45,45 40,40 47,39" fill="#eab308" />
+                        </svg>
+                        <figcaption>Athletics & Sports Field</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Horizon Academy Multimedia Desk &copy; 2026. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Academy | Nurturing Minds, Shaping Futures</title>
+    <!-- Importing a premium typography font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #eab308;
+            --secondary-dark: #ca8a04;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Hero Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.15), 0 8px 10px -6px rgba(30, 58, 138, 0.15);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(234, 179, 8, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header h1 i {
+            color: var(--secondary);
+            font-style: normal;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            color: #bfdbfe;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Content Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card Component */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--bg-main);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 1.25rem 0 0.5rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.975rem;
+        }
+
+        /* Blockquote Styling */
+        blockquote {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary-light);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #1e3a8a;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: "“";
+            font-size: 4rem;
+            color: rgba(59, 130, 246, 0.15);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            line-height: 1;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.95rem;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Tags and formatting overrides */
+        mark {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 0.125rem 0.35rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        del {
+            color: #94a3b8;
+            text-decoration: line-through;
+            margin-right: 0.25rem;
+        }
+
+        sup, sub {
+            font-size: 0.75rem;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sup {
+            top: -0.5em;
+            color: var(--secondary-dark);
+            font-weight: 700;
+        }
+
+        sub {
+            bottom: -0.25em;
+            color: var(--primary-light);
+        }
+
+        q {
+            font-style: italic;
+            quotes: "“" "”";
+        }
+
+        .student-quote {
+            background-color: var(--bg-main);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        footer h5 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer h6 {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header>
+            <h1>🏫 Horizon <i>Academy</i></h1>
+            <p>Empowering students to <b>innovate</b>, <b>excel</b>, and <b>lead</b> with character and global perspective.</p>
+        </header>
+
+        <!-- Content Grid -->
+        <div class="grid">
+            <!-- Main Content Area -->
+            <main>
+                <!-- Welcome Section -->
+                <section class="card">
+                    <h2>Welcome to Our School</h2>
+                    <p>At Horizon Academy, we believe that education is not just about memorizing facts, but learning to think. We focus on academic rigor, creative arts, and physical development. Our modern facilities provide a safe and nurturing environment for students to discover their passions.</p>
+                    
+                    <h3>Our Philosophy</h3>
+                    <p>We emphasize <strong>critical thinking</strong> and hands-on scientific inquiry. As the famous saying goes, <q>Science is a way of thinking much more than it is a body of knowledge</q>. We strive to make sure every student excels in their chosen field.</p>
+                    
+                    <div class="student-quote">
+                        <p><q>Horizon Academy has given me the confidence to present my science project at the state level,</q> says <b>Elena Rostova</b>, a 12<sup>th</sup> grade student.</p>
+                    </div>
+                </section>
+
+                <!-- Principal's Message -->
+                <section class="card">
+                    <h2>Principal's Message</h2>
+                    <p>It is my absolute privilege to welcome you to Horizon Academy's digital portal. Every day, I witness our classrooms buzzing with curiosity and creative exploration.</p>
+                    
+                    <blockquote cite="https://www.horizonacademy.edu/about/principal-message">
+                        Our primary goal is to guide students to become lifelong learners who are not afraid to ask hard questions. We build character, cultivate empathy, and foster academic brilliance.
+                        <cite>— Dr. Marcus Vance, Principal</cite>
+                    </blockquote>
+                    
+                    <p>We encourage parents to be <em>active partners</em> in this beautiful educational journey.</p>
+                </section>
+            </main>
+
+            <!-- Sidebar Info Area -->
+            <aside>
+                <!-- Notice Board -->
+                <div class="card">
+                    <h2>📢 Notice Board</h2>
+                    <ul>
+                        <li>
+                            <strong>Winter Timings:</strong><br>
+                            Starting Dec 1<sup>st</sup>, timings will be changed from <del>8:00 AM - 2:00 PM</del> to <strong>8:30 AM - 2:30 PM</strong>.
+                        </li>
+                        <li>
+                            <strong>Annual Science Exhibition:</strong><br>
+                            Participation is <mark>compulsory</mark> for all senior classes. Make sure your models are registered.
+                        </li>
+                        <li>
+                            <strong>Exam Prep Reminder:</strong><br>
+                            Students are reminded to study <small>(but also get adequate rest!)</small> before the upcoming mid-terms.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Academic Excellence & Fun Facts -->
+                <div class="card">
+                    <h2>🏆 Quick Facts</h2>
+                    <ul>
+                        <li>Ranked 1<sup>st</sup> in State Athletics.</li>
+                        <li>Founded: 1998 <small>(Celebrating 28 years of excellence!)</small></li>
+                        <li>Science Lab Motto: "Explore the magic of H<sub>2</sub>O and the universe."</li>
+                        <li>Student-Teacher Ratio: 15:1</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <h5>Horizon Academy Secondary School</h5>
+            <p>100 Academic Boulevard, Suite A, Science City</p>
+            <p><small>Copyright &copy; 2026 Horizon Academy. All rights reserved.</small></p>
+            <h6>Document Code: HA-L2ACP-2026</h6>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Academy | Academic Timetable & Grading Scale</title>
+    <!-- Importing a premium typography font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #eab308;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --border: #e2e8f0;
+            --accent: #f0fdf4;
+            --accent-text: #166534;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.15);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #bfdbfe;
+        }
+
+        /* Section Layout */
+        section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        p.section-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Table Container for Responsiveness */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            margin-bottom: 1rem;
+        }
+
+        /* Table CSS Design */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+            min-width: 600px;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-light);
+            transition: background-color 0.2s;
+        }
+
+        /* Zebra Striping */
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Hover states */
+        tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        tbody td:hover {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Specific Cell Alignments and Accents */
+        .recess-cell {
+            background-color: #fef08a !important;
+            color: #854d0e;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .lab-cell {
+            background-color: #ecfdf5;
+            color: #065f46;
+            font-weight: 600;
+            border-left: 3px solid #10b981;
+        }
+
+        .grade-a {
+            background-color: #f0fdf4;
+            color: #166534;
+            font-weight: 700;
+        }
+
+        .grade-b {
+            background-color: #eff6ff;
+            color: #1e40af;
+            font-weight: 700;
+        }
+
+        .grade-c {
+            background-color: #fffbeb;
+            color: #9a3412;
+            font-weight: 700;
+        }
+
+        .grade-f {
+            background-color: #fef2f2;
+            color: #991b1b;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📅 Academic Planner</h1>
+            <p>Horizon Academy Course Timetable and Performance Benchmarks</p>
+        </header>
+
+        <!-- Timetable Section -->
+        <section>
+            <h2>Weekly Timetable (Grades 9-12)</h2>
+            <p class="section-desc">Class schedules are organized below. Please notice the double lab periods and standardized recess break.</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time Slot</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>08:30 AM - 09:30 AM</strong></td>
+                            <td>Mathematics</td>
+                            <td>English Literature</td>
+                            <td>Physics</td>
+                            <td>History</td>
+                            <td>Fine Arts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>09:30 AM - 10:30 AM</strong></td>
+                            <td>Chemistry</td>
+                            <td>Mathematics</td>
+                            <td>Biology</td>
+                            <td>Geography</td>
+                            <td>Music</td>
+                        </tr>
+                        <!-- Colspan to merge cells for recess across all days -->
+                        <tr>
+                            <td><strong>10:30 AM - 11:00 AM</strong></td>
+                            <td colspan="5" class="recess-cell">☕ Recess / Lunch Break</td>
+                        </tr>
+                        <tr>
+                            <td><strong>11:00 AM - 12:00 PM</strong></td>
+                            <td>World History</td>
+                            <td>Physical Education</td>
+                            <!-- Rowspan used for a 2-hour IT Lab session -->
+                            <td rowspan="2" class="lab-cell">💻 Computer Science Lab</td>
+                            <td>English Grammar</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>12:00 PM - 01:00 PM</strong></td>
+                            <td>Civics</td>
+                            <td>Environmental Sci.</td>
+                            <td>Creative Writing</td>
+                            <td>Economics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>01:00 PM - 02:00 PM</strong></td>
+                            <td class="lab-cell" colspan="2">🧪 Physics Practical Lab</td>
+                            <td>Algebra</td>
+                            <td>French / Spanish</td>
+                            <td>Club Activities</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Grading Scale Section -->
+        <section>
+            <h2>Academic Grading System</h2>
+            <p class="section-desc">The academic achievement indicators for student transcripts are scaled as follows:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Letter Grade</th>
+                            <th>Percentage Bracket</th>
+                            <th>Academic Description</th>
+                            <th>Grade Point Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="grade-a">A+</td>
+                            <td>95% - 100%</td>
+                            <td>Outstanding Merit</td>
+                            <td>4.00</td>
+                        </tr>
+                        <tr>
+                            <td class="grade-a">A</td>
+                            <td>85% - 94%</td>
+                            <td>Excellent Achievement</td>
+                            <td>3.75</td>
+                        </tr>
+                        <tr>
+                            <td class="grade-b">B</td>
+                            <td>70% - 84%</td>
+                            <td>Very Good Progress</td>
+                            <td>3.00</td>
+                        </tr>
+                        <tr>
+                            <td class="grade-c">C</td>
+                            <td>50% - 69%</td>
+                            <td>Satisfactory Progress</td>
+                            <td>2.00</td>
+                        </tr>
+                        <tr>
+                            <td class="grade-f">F</td>
+                            <td>Below 50%</td>
+                            <td>Failure to Meet Standards</td>
+                            <td>0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Horizon Academy Academic Administration &copy; 2026. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

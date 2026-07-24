@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Academy | Club Registration Form</title>
+    <!-- Importing a premium typography font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #eab308;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --border: #cbd5e1;
+            --focus-ring: rgba(59, 130, 246, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #eff6ff 0%, var(--bg-main) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .form-container {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 520px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Form Header */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px var(--focus-ring);
+        }
+
+        /* Custom Radio Choices */
+        .radio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-option {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .radio-option:hover {
+            background-color: #f8fafc;
+            border-color: var(--primary-light);
+        }
+
+        .radio-option input[type="radio"] {
+            accent-color: var(--primary);
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+
+        .radio-option span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        /* Specific text area styling */
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.85rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 15px -3px rgba(30, 58, 138, 0.3);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* Success Message styling */
+        .success-banner {
+            display: none;
+            background-color: #ecfdf5;
+            border: 1px solid #10b981;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <!-- Form Header -->
+        <header>
+            <h1>Join a Student Club</h1>
+            <p>Select your favorite extracurricular activity at Horizon Academy</p>
+        </header>
+
+        <!-- Success notification placeholder -->
+        <div id="successMessage" class="success-banner">
+            🎉 Registration submitted successfully! Welcome to the club.
+        </div>
+
+        <!-- Form content -->
+        <form id="clubForm" onsubmit="handleSubmit(event)">
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your first and last name" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Student Email</label>
+                <input type="email" id="email" placeholder="username@horizonacademy.edu" required>
+            </div>
+
+            <!-- Grade Select Dropdown -->
+            <div class="form-group">
+                <label for="grade">Grade Level</label>
+                <select id="grade" required>
+                    <option value="" disabled selected>Choose your grade</option>
+                    <option value="9">Grade 9 (Freshman)</option>
+                    <option value="10">Grade 10 (Sophomore)</option>
+                    <option value="11">Grade 11 (Junior)</option>
+                    <option value="12">Grade 12 (Senior)</option>
+                </select>
+            </div>
+
+            <!-- Club Selection Radio Buttons -->
+            <div class="form-group">
+                <label>Select Your Club</label>
+                <div class="radio-grid">
+                    <label class="radio-option">
+                        <input type="radio" name="clubChoice" value="robotics" required>
+                        <span>🤖 Robotics</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="clubChoice" value="debate">
+                        <span>💬 Debate</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="clubChoice" value="drama">
+                        <span>🎭 Drama & Art</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="clubChoice" value="athletics">
+                        <span>🏆 Athletics</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Short statement -->
+            <div class="form-group">
+                <label for="statement">Why do you want to join? <span style="font-weight: normal; color: #94a3b8;">(Optional)</span></label>
+                <textarea id="statement" placeholder="Write a short sentence about your interest..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+    <!-- Script to simulate successful form action -->
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const success = document.getElementById('successMessage');
+            success.style.display = 'block';
+            document.getElementById('clubForm').reset();
+            setTimeout(() => {
+                success.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+</body>
+
+</html>
