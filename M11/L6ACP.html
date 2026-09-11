@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Positioning</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 600px;
+            height: 400px;
+            background-color: lightblue;
+            position: relative;
+            margin: 30px auto;
+            border: 3px solid blue;
+        }
+
+        /* Static Position */
+        .static {
+            background-color: lightgreen;
+            padding: 10px;
+            position: static;
+        }
+
+        /* Relative Position */
+        .relative {
+            background-color: orange;
+            padding: 10px;
+            position: relative;
+            top: 20px;
+            left: 30px;
+        }
+
+        /* Absolute Position */
+        .absolute {
+            background-color: pink;
+            padding: 10px;
+            position: absolute;
+            top: 100px;
+            right: 30px;
+        }
+
+        /* Fixed Position */
+        .fixed {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Sticky Position */
+        .sticky {
+            background-color: yellow;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Positioning</h1>
+
+    <div class="sticky">
+        Sticky Element
+    </div>
+
+    <div class="container">
+
+        <div class="static">
+            Static Position
+        </div>
+
+        <div class="relative">
+            Relative Position
+        </div>
+
+        <div class="absolute">
+            Absolute Position
+        </div>
+
+    </div>
+
+    <div class="fixed">
+        Fixed Position
+    </div>
+
+    <p>
+        Scroll the page to see how sticky and fixed positioning work.
+    </p>
+
+    <p style="height: 700px;">
+        Scroll down to see the positioning effects.
+    </p>
+
+</body>
+
+</html>

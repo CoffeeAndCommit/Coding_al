@@ -1,0 +1,86 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pseudo Classes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        /* ---------------- HOVER ---------------- */
+
+        button:hover {
+            background-color: green;
+            color: white;
+        }
+
+
+        /* ---------------- ACTIVE ---------------- */
+
+        button:active {
+            background-color: red;
+            transform: scale(0.9);
+        }
+
+
+        /* ---------------- FOCUS ---------------- */
+
+        input {
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid gray;
+        }
+
+        input:focus {
+            border: 3px solid blue;
+            background-color: lightyellow;
+            outline: none;
+        }
+
+
+        /* ---------------- DISABLED ---------------- */
+
+        button:disabled {
+            background-color: gray;
+            color: black;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Pseudo-Classes</h1>
+
+    <h2>1. Hover</h2>
+
+    <button>Move Mouse Over Me</button>
+
+
+    <h2>2. Active</h2>
+
+    <button>Click and Hold Me</button>
+
+
+    <h2>3. Focus</h2>
+
+    <input type="text" placeholder="Click and type here">
+
+
+    <h2>4. Disabled</h2>
+
+    <button disabled>Disabled Button</button>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,76 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Transform</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid blue;
+        }
+
+        /* Move the box */
+        .translate {
+            transform: translate(50px, 20px);
+        }
+
+        /* Rotate the box */
+        .rotate {
+            transform: rotate(20deg);
+        }
+
+        /* Make the box bigger */
+        .scale {
+            transform: scale(1.3);
+        }
+
+        /* Slant the box */
+        .skew {
+            transform: skew(20deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Transform</h1>
+
+    <h2>1. Translate</h2>
+
+    <div class="box translate">
+        Translate
+    </div>
+
+    <h2>2. Rotate</h2>
+
+    <div class="box rotate">
+        Rotate
+    </div>
+
+    <h2>3. Scale</h2>
+
+    <div class="box scale">
+        Scale
+    </div>
+
+    <h2>4. Skew</h2>
+
+    <div class="box skew">
+        Skew
+    </div>
+
+</body>
+
+</html>
+```

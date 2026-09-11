@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Float</title>
+
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            border: 3px solid blue;
+            float: left;
+            margin: 10px;
+        }
+
+        .right {
+            float: right;
+            background-color: lightgreen;
+        }
+
+        .text {
+            font-size: 20px;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Float</h1>
+
+    <div class="box">
+        Float Left
+    </div>
+
+    <div class="box right">
+        Float Right
+    </div>
+
+    <p class="text">
+        The float property is used to move an element
+        to the left or right. Other content can wrap
+        around the floated element.
+    </p>
+
+    <p class="clear">
+        This paragraph starts below the floated boxes.
+    </p>
+
+</body>
+
+</html>
