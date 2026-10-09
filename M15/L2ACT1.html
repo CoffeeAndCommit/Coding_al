@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palindrome App Using JavaScript</title><style>
+:root{--ink:#172033;--muted:#64748b;--brand:#5b5bd6;--bg:#f4f6fb;--line:#dce3ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:980px;margin:auto;padding:28px 18px 50px}.hero{background:linear-gradient(130deg,#16324f,#5b5bd6);color:white;padding:28px;border-radius:20px;margin-bottom:22px}
+.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;opacity:.8}.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:.35em 0}.hero p{margin-bottom:0;color:#e5e7ff}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 8px 24px #26355b0a}
+h2{font-size:1.35rem;margin-top:0}h3{font-size:1.05rem}p{margin:.55em 0}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}code{background:#eef0ff;padding:.12em .35em;border-radius:5px}pre{background:#111827;color:#e5e7eb;padding:16px;border-radius:12px;overflow:auto;white-space:pre-wrap}
+button,.btn{border:0;border-radius:9px;background:var(--brand);color:white;padding:10px 15px;font-weight:650;cursor:pointer;margin:4px 4px 4px 0}button:hover{filter:brightness(.93)}button.secondary{background:#475569}button.danger{background:#b91c1c}input,select,textarea{font:inherit;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;max-width:100%}
+input[type=number]{width:150px}.output{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:9px;min-height:44px;margin-top:12px;overflow-wrap:anywhere;white-space:pre-wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.tile{background:#eef0ff;padding:15px;border-radius:12px}.muted{color:var(--muted)}.tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:3px 9px;border-radius:999px;font-size:.8rem;font-weight:700}
+.big-number{font-size:clamp(2.5rem,8vw,5rem);font-weight:800;line-height:1.2;font-variant-numeric:tabular-nums}.center{text-align:center}.list{padding-left:24px}.list li{padding:7px 0;border-bottom:1px solid var(--line)}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:30px}
+</style></head>
+<body><main class="wrap"><header class="hero"><div class="kicker">M15 · JavaScript Apps</div><h1>Palindrome App Using JavaScript</h1><p>Check whether a word or phrase reads the same backwards.</p></header>
+
+<section class="card"><h2>Palindrome checker</h2><label for="word">Enter a word or phrase</label><br><input id="word" style="width:min(100%,520px)" value="Never odd or even"><button onclick="checkPalindrome()">Check</button><div id="out" class="output" aria-live="polite">Try a word like level or a phrase like Never odd or even.</div></section>
+<footer>Practice app · Open this HTML file in your browser</footer></main>
+<script>"use strict";
+
+function checkPalindrome(){const original=document.getElementById('word').value;const cleaned=original.toLowerCase().replace(/[^a-z0-9]/g,'');if(!cleaned){document.getElementById('out').textContent='Please enter some letters or numbers.';return;}const reversed=[...cleaned].reverse().join('');document.getElementById('out').textContent=cleaned===reversed?'Yes! “'+original+'” is a palindrome.':'No, “'+original+'” is not a palindrome.';}
+
+</script></body></html>

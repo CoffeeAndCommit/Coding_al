@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prepare a To-Do List</title><style>
+:root{--ink:#172033;--muted:#64748b;--brand:#5b5bd6;--bg:#f4f6fb;--line:#dce3ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:980px;margin:auto;padding:28px 18px 50px}.hero{background:linear-gradient(130deg,#16324f,#5b5bd6);color:white;padding:28px;border-radius:20px;margin-bottom:22px}
+.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;opacity:.8}.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:.35em 0}.hero p{margin-bottom:0;color:#e5e7ff}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 8px 24px #26355b0a}
+h2{font-size:1.35rem;margin-top:0}h3{font-size:1.05rem}p{margin:.55em 0}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}code{background:#eef0ff;padding:.12em .35em;border-radius:5px}pre{background:#111827;color:#e5e7eb;padding:16px;border-radius:12px;overflow:auto;white-space:pre-wrap}
+button,.btn{border:0;border-radius:9px;background:var(--brand);color:white;padding:10px 15px;font-weight:650;cursor:pointer;margin:4px 4px 4px 0}button:hover{filter:brightness(.93)}button.secondary{background:#475569}button.danger{background:#b91c1c}input,select,textarea{font:inherit;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;max-width:100%}
+input[type=number]{width:150px}.output{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:9px;min-height:44px;margin-top:12px;overflow-wrap:anywhere;white-space:pre-wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.tile{background:#eef0ff;padding:15px;border-radius:12px}.muted{color:var(--muted)}.tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:3px 9px;border-radius:999px;font-size:.8rem;font-weight:700}
+.big-number{font-size:clamp(2.5rem,8vw,5rem);font-weight:800;line-height:1.2;font-variant-numeric:tabular-nums}.center{text-align:center}.list{padding-left:24px}.list li{padding:7px 0;border-bottom:1px solid var(--line)}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:30px}
+</style></head>
+<body><main class="wrap"><header class="hero"><div class="kicker">M15 · JavaScript Apps</div><h1>Prepare a To-Do List</h1><p>Add tasks, mark them complete and remove tasks.</p></header>
+
+<section class="card"><h2>My to-do list</h2><form id="taskForm" class="row"><input id="taskInput" required maxlength="120" placeholder="Enter a task" style="flex:1;min-width:220px"><button type="submit">Add task</button></form><p class="muted">Click a task to mark it complete.</p><ul id="tasks" class="list"></ul><div id="out" class="output" aria-live="polite">No tasks yet. Add your first task.</div></section>
+<footer>Practice app · Open this HTML file in your browser</footer></main>
+<script>"use strict";
+
+const tasks=[];let nextId=1;
+function renderTasks(){const list=document.getElementById('tasks');list.innerHTML='';tasks.forEach(t=>{const li=document.createElement('li');const label=document.createElement('label');label.style.cursor='pointer';const cb=document.createElement('input');cb.type='checkbox';cb.checked=t.done;cb.addEventListener('change',()=>{t.done=cb.checked;renderTasks();});label.append(cb,document.createTextNode(' '+t.text));if(t.done)label.style.textDecoration='line-through';const del=document.createElement('button');del.textContent='Delete';del.className='danger';del.addEventListener('click',()=>{const i=tasks.findIndex(x=>x.id===t.id);if(i>=0)tasks.splice(i,1);renderTasks();});li.append(label,del);list.appendChild(li);});document.getElementById('out').textContent=`${tasks.filter(t=>t.done).length} completed · ${tasks.filter(t=>!t.done).length} remaining`;}
+document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('taskInput'),text=input.value.trim();if(text){tasks.push({id:nextId++,text,done:false});input.value='';renderTasks();}});
+
+</script></body></html>
